@@ -1,0 +1,25 @@
+{
+  // Required
+  "name": "Omnik remote server setting",
+  "version": "1",
+	"manifest_version":2,
+  // Recommended
+  "description": "Edit remote server setting",
+  //"default_locale": "en",
+
+  // Pick one (or none)
+  "browser_action": {
+    "default_title": "Omnik remote server setting, tested on Omnik2000tl. It let you show the fields and add edit button."      // optional; shown in tooltip
+    },
+
+  "permissions": [ "http://*/", "https://*/", "tabs" ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/remote.html"],
+      "js": ["jquery2.min.js","content_script.js" ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+    ]
+}
